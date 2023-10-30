@@ -43,6 +43,9 @@ class Dev(Configuration):
 
     OMDB_KEY = "d8543392"
 
+    CELERY_RESULT_BACKEND = "django-db"
+    CELERY_BROKER_URL = "redis://localhost:6379/0"
+
     # Build paths inside the project like this: BASE_DIR / 'subdir'.
     BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -77,6 +80,7 @@ class Dev(Configuration):
         'django.contrib.staticfiles',
         'movies',
         'gh',
+        'django_celery_results',
     ]
 
     MIDDLEWARE = [

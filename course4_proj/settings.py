@@ -41,6 +41,8 @@ class Dev(Configuration):
         },
     }
 
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    ADMINS = [("codio", "doi@doi.doi")]
     OMDB_KEY = "d8543392"
 
     CELERY_RESULT_BACKEND = "django-db"
